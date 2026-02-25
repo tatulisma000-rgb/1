@@ -23,13 +23,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Header Scroll Effect
   const header = document.querySelector('header');
+  const spotlight = document.querySelector('.spotlight');
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
+
+    // Hero Parallax
+    if (spotlight) {
+      const scrollValue = window.scrollY;
+      spotlight.style.transform = `translateX(-50%) translateY(${scrollValue * 0.3}px)`;
+    }
   });
+
+  // Reveal on Scroll
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Once revealed, no need to observe anymore
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
 
   // Pricing Toggle Logic
   const pricingToggle = document.getElementById('pricing-toggle');
@@ -95,6 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
       tagChips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       filterResources();
+    });
+  });
+
+  // Smooth Scroll for Anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
