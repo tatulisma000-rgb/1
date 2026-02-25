@@ -31,8 +31,9 @@
       transition: var(--transition-smooth);
     }
     .form-group input:focus, .form-group textarea:focus {
-      border-color: rgba(255,255,255,0.3);
+      border-color: var(--accent-blue);
       background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 15px var(--accent-blue-glow);
     }
   </style>
 </head>
@@ -68,13 +69,13 @@
   </header>
 
   <main>
-    <section class="hero" style="padding-bottom: 40px;">
-      <h1>Get in Touch</h1>
+    <section class="hero reveal">
+      <h1>Get in <span class="text-accent">Touch</span></h1>
       <p>Have questions? We're here to help you scale your business.</p>
     </section>
 
     <section style="padding-top: 0;">
-      <div class="contact-container glass-card">
+      <div class="contact-container glass-card reveal">
         <form id="contact-form">
           <div class="form-group">
             <label for="name">Full Name</label>
@@ -93,17 +94,17 @@
       </div>
     </section>
 
-    <section style="text-align: center; color: var(--text-secondary); padding-bottom: 100px;">
+    <section style="text-align: center; color: var(--text-secondary); padding-bottom: 100px;" class="reveal">
       <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <div>
+        <div class="reveal reveal-delay-1">
           <h4>Email Us</h4>
           <p style="margin-top: 8px;">support@vantrix.com</p>
         </div>
-        <div>
+        <div class="reveal reveal-delay-2">
           <h4>Call Us</h4>
           <p style="margin-top: 8px;">+1 (555) 000-0000</p>
         </div>
-        <div>
+        <div class="reveal reveal-delay-3">
           <h4>Visit Us</h4>
           <p style="margin-top: 8px;">123 Tech Lane, SF, CA</p>
         </div>
