@@ -10,20 +10,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Active Link State
+  // Active Link State & Sliding Indicator
   const currentPath = window.location.pathname;
+  const navLinksContainer = document.querySelector('.nav-links');
   const navItems = document.querySelectorAll('.nav-links a');
+
+  // Create indicator
+  const indicator = document.createElement('div');
+  indicator.className = 'nav-indicator';
+  if (navLinksContainer) navLinksContainer.appendChild(indicator);
+
+  function moveIndicator(element) {
+    if (!element || !indicator) return;
+    const rect = element.getBoundingClientRect();
+    const containerRect = navLinksContainer.getBoundingClientRect();
+    indicator.style.width = `${rect.width}px`;
+    indicator.style.left = `${rect.left - containerRect.left}px`;
+    indicator.style.opacity = '1';
+  }
 
   navItems.forEach(link => {
     const href = link.getAttribute('href');
-    if (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html')) {
+    if (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html') || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
+      setTimeout(() => moveIndicator(link), 100);
     }
+
+    link.addEventListener('mouseenter', () => moveIndicator(link));
   });
+
+  if (navLinksContainer) {
+    navLinksContainer.addEventListener('mouseleave', () => {
+      const activeLink = document.querySelector('.nav-links a.active');
+      if (activeLink) {
+        moveIndicator(activeLink);
+      } else {
+        indicator.style.opacity = '0';
+      }
+    });
+  }
 
   // Header Scroll Effect
   const header = document.querySelector('header');
   const spotlight = document.querySelector('.spotlight');
+  const previewCard = document.querySelector('.preview-card');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -32,11 +62,51 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
 
-    // Hero Parallax
+    // Hero Scroll Parallax
     if (spotlight) {
       const scrollValue = window.scrollY;
-      spotlight.style.transform = `translateX(-50%) translateY(${scrollValue * 0.3}px)`;
+      spotlight.style.transform = `translateY(${scrollValue * 0.3}px)`;
     }
+  });
+
+  // Mouse Parallax & Spotlight Effect
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+
+    // Spotlight movement
+    if (spotlight) {
+      const x = (clientX / window.innerWidth) * 100;
+      const y = (clientY / window.innerHeight) * 100;
+      spotlight.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 112, 243, 0.15) 0%, transparent 50%)`;
+    }
+
+    // Dashboard Tilt
+    if (previewCard) {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const moveX = (clientX - centerX) / 100;
+      const moveY = (clientY - centerY) / 100;
+
+      previewCard.style.transform = `perspective(2000px) rotateX(${-moveY}deg) rotateY(${moveX}deg) translateY(${window.scrollY * 0.05}px)`;
+    }
+
+    // Magnetic Buttons
+    const magneticBtns = document.querySelectorAll('.btn-primary, .brand');
+    magneticBtns.forEach(btn => {
+      const rect = btn.getBoundingClientRect();
+      const btnX = rect.left + rect.width / 2;
+      const btnY = rect.top + rect.height / 2;
+
+      const dist = Math.hypot(clientX - btnX, clientY - btnY);
+
+      if (dist < 100) {
+        const x = (clientX - btnX) * 0.2;
+        const y = (clientY - btnY) * 0.2;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      } else {
+        btn.style.transform = `translate(0, 0)`;
+      }
+    });
   });
 
   // Reveal on Scroll
