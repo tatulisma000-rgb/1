@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vantrix - The all-in-one platform to launch, manage, and grow your online store with lightning speed and premium aesthetics.">
+  <meta name="keywords" content="e-commerce, saas, online store, business scale, vantrix">
+  <meta property="og:title" content="Vantrix - Build and Scale Your E-commerce Business">
+  <meta property="og:description" content="The all-in-one platform to launch, manage, and grow your online store with lightning speed and premium aesthetics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vantrix.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vantrix - Build and Scale Your E-commerce Business">
+  <meta name="twitter:description" content="Launch and scale your e-commerce brand with Vantrix.">
   <title>Vantrix - Build and Scale Your E-commerce Business</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,12 +25,21 @@
   <header>
     <div class="nav-container">
       <a href="index.html" class="brand">
-        <div class="brand-logo"></div>
+        <svg class="brand-logo-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+          <path d="M9 16.5L13.5 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0070f3"/>
+              <stop offset="1" stop-color="#00c2ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
         Vantrix
       </a>
       <nav class="nav-links">
         <a href="product.html">Product</a>
-        <a href="#">Solution</a>
+        <a href="#how-it-works">Solution</a>
         <a href="resources.html">Resources</a>
         <a href="pricing.html">Pricing</a>
       </nav>
@@ -48,8 +66,58 @@
 
       <div class="preview-section reveal reveal-delay-2">
         <div class="preview-card">
-          <div style="width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%); display: flex; align-items: center; justify-content: center;">
-            <p style="color: rgba(255,255,255,0.2); font-size: 1.5rem;">Premium Dashboard Interface</p>
+          <div class="dashboard-mockup">
+            <div class="sidebar">
+              <div class="sidebar-logo"></div>
+              <div class="sidebar-item active"></div>
+              <div class="sidebar-item"></div>
+              <div class="sidebar-item"></div>
+              <div class="sidebar-item"></div>
+              <div class="sidebar-footer"></div>
+            </div>
+            <div class="main-content">
+              <div class="top-nav">
+                <div class="nav-search"></div>
+                <div class="nav-actions">
+                  <div class="nav-notif"></div>
+                  <div class="user-profile"></div>
+                </div>
+              </div>
+              <div class="dashboard-content">
+                <div class="stats-overview">
+                  <div class="stat-pill"></div>
+                  <div class="stat-pill"></div>
+                  <div class="stat-pill"></div>
+                </div>
+                <div class="dashboard-grid">
+                  <div class="chart-card glass-inner">
+                    <div class="card-header">
+                      <div class="dot"></div>
+                      <div class="line-sm"></div>
+                    </div>
+                    <svg viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 130C40 125 70 60 110 70C150 80 180 110 220 95C260 80 300 40 340 35C370 30 385 15 400 5V150H0V130Z" fill="url(#paint0_linear)" fill-opacity="0.3"/>
+                      <path d="M0 130C40 125 70 60 110 70C150 80 180 110 220 95C260 80 300 40 340 35C370 30 385 15 400 5" stroke="#0070f3" stroke-width="3" stroke-linecap="round"/>
+                      <defs>
+                        <linearGradient id="paint0_linear" x1="200" y1="0" x2="200" y2="150" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#0070f3"/>
+                          <stop offset="1" stop-color="#0070f3" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="side-panel">
+                    <div class="small-card glass-inner"></div>
+                    <div class="small-card glass-inner"></div>
+                  </div>
+                  <div class="bottom-card glass-inner">
+                    <div class="list-row"></div>
+                    <div class="list-row"></div>
+                    <div class="list-row"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -58,11 +126,11 @@
     <div class="trusted-by reveal">
       <p>Trusted by world-class brands</p>
       <div class="logo-cloud">
-        <span>STRIPE</span>
-        <span>MODERN</span>
-        <span>VELOCITY</span>
-        <span>ECHO</span>
-        <span>AURORA</span>
+        <div class="logo-item">STRIPE</div>
+        <div class="logo-item">MODERN</div>
+        <div class="logo-item">VELOCITY</div>
+        <div class="logo-item">ECHO</div>
+        <div class="logo-item">AURORA</div>
       </div>
     </div>
 
@@ -87,41 +155,102 @@
       </div>
     </section>
 
+    <section class="how-it-works" id="how-it-works">
+      <div style="text-align: center; margin-bottom: 80px;" class="reveal">
+        <div class="badge">PROCESS</div>
+        <h2 style="font-size: 3.5rem; margin-top: 16px;">Simple. Fast. Powerful.</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 24px auto 0;">Vantrix takes care of the technical heavy lifting, allowing you to launch a world-class e-commerce experience in record time.</p>
+      </div>
+      <div class="steps-wrapper reveal">
+        <div class="step-item">
+          <div class="step-visual">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <span class="step-tag">STEP 01</span>
+            <h3>Connect your data</h3>
+            <p>Sync your products from any platform or CSV. Our AI automatically categorizes and optimizes your listings.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-visual">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7 11l-1 1"></path></svg>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <span class="step-tag">STEP 02</span>
+            <h3>Customize your brand</h3>
+            <p>Use our visual engine to create a stunning storefront. Choose from dozens of premium components designed to convert.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-visual">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <span class="step-tag">STEP 03</span>
+            <h3>Scale to the moon</h3>
+            <p>Deploy to our global edge network. Experience 99.9% uptime and sub-second page loads anywhere in the world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="features" id="features">
       <div style="text-align: center; margin-bottom: 80px;" class="reveal">
-        <h2 style="font-size: 3rem; margin-bottom: 16px;">Everything you need to succeed</h2>
-        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Our comprehensive suite of tools empowers you to handle every aspect of your business from a single, beautiful dashboard.</p>
+        <div class="badge">FEATURES</div>
+        <h2 style="font-size: 3.5rem; margin-top: 16px;">Scale without limits</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 24px auto 0;">Everything you need to manage and grow your e-commerce business, integrated into a single high-performance platform.</p>
       </div>
       <div class="feature-grid">
         <div class="glass-card reveal reveal-delay-1">
-          <div style="width: 40px; height: 40px; background: var(--accent-blue); border-radius: 10px; margin-bottom: 24px; opacity: 0.8;"></div>
-          <h3>Rapid Deployment</h3>
-          <p style="color: var(--text-secondary); margin-top: 12px;">Launch your store in minutes with our pre-built high-converting templates and lightning-fast edge network.</p>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3>Premium Storefronts</h3>
+          <p style="color: var(--text-secondary); margin-top: 12px;">Convert more visitors into customers with our industry-leading storefront templates and sub-second page loads.</p>
         </div>
         <div class="glass-card reveal reveal-delay-2">
-          <div style="width: 40px; height: 40px; background: var(--accent-blue); border-radius: 10px; margin-bottom: 24px; opacity: 0.8;"></div>
-          <h3>Advanced Analytics</h3>
-          <p style="color: var(--text-secondary); margin-top: 12px;">Deep insights into your customers and sales to make data-driven decisions with real-time tracking.</p>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+          </div>
+          <h3>Real-time Insights</h3>
+          <p style="color: var(--text-secondary); margin-top: 12px;">Monitor your business health with advanced analytics, custom reports, and live customer behavior tracking.</p>
         </div>
         <div class="glass-card reveal reveal-delay-3">
-          <div style="width: 40px; height: 40px; background: var(--accent-blue); border-radius: 10px; margin-bottom: 24px; opacity: 0.8;"></div>
-          <h3>Seamless Integration</h3>
-          <p style="color: var(--text-secondary); margin-top: 12px;">Connect with all your favorite tools like Stripe, ShipStation, and Slack with a single click.</p>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <h3>Global Edge Network</h3>
+          <p style="color: var(--text-secondary); margin-top: 12px;">Your store lives on the edge. Minimize latency and maximize availability for customers regardless of their location.</p>
         </div>
         <div class="glass-card reveal reveal-delay-1">
-          <div style="width: 40px; height: 40px; background: var(--accent-blue); border-radius: 10px; margin-bottom: 24px; opacity: 0.8;"></div>
-          <h3>Global Commerce</h3>
-          <p style="color: var(--text-secondary); margin-top: 12px;">Sell anywhere with multi-currency support and automatic tax calculations for 150+ countries.</p>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p style="color: var(--text-secondary); margin-top: 12px;">Sleep easy knowing your data is protected by PCI-level security, automatic backups, and advanced fraud detection.</p>
         </div>
         <div class="glass-card reveal reveal-delay-2">
-          <div style="width: 40px; height: 40px; background: var(--accent-blue); border-radius: 10px; margin-bottom: 24px; opacity: 0.8;"></div>
-          <h3>AI Optimization</h3>
-          <p style="color: var(--text-secondary); margin-top: 12px;">Leverage machine learning to optimize your product descriptions and personalize customer journeys.</p>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+          </div>
+          <h3>Automated Workflows</h3>
+          <p style="color: var(--text-secondary); margin-top: 12px;">Eliminate manual tasks with powerful automation for inventory management, shipping, and customer support.</p>
         </div>
         <div class="glass-card reveal reveal-delay-3">
-          <div style="width: 40px; height: 40px; background: var(--accent-blue); border-radius: 10px; margin-bottom: 24px; opacity: 0.8;"></div>
-          <h3>Enterprise Security</h3>
-          <p style="color: var(--text-secondary); margin-top: 12px;">Bank-level security with PCI compliance and advanced DDoS protection to keep your data safe.</p>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3>Multi-channel Sales</h3>
+          <p style="color: var(--text-secondary); margin-top: 12px;">Sell everywhere your customers are: Instagram, TikTok, Amazon, and more—all synced to one central dashboard.</p>
         </div>
       </div>
     </section>
@@ -154,7 +283,16 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="index.html" class="brand">
-          <div class="brand-logo"></div>
+          <svg class="brand-logo-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="url(#logo-gradient-footer)"/>
+            <path d="M9 16.5L13.5 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient-footer" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0070f3"/>
+                <stop offset="1" stop-color="#00c2ff"/>
+              </linearGradient>
+            </defs>
+          </svg>
           Vantrix
         </a>
         <p>Building the future of e-commerce.</p>
