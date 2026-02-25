@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Vantrix</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--glass-border);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="spotlight-wrapper">
+    <div class="spotlight"></div>
+    <div class="vignette"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-logo"></div>
+        Vantrix
+      </a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="#">Solution</a>
+        <a href="resources.html">Resources</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+      <div class="nav-auth">
+        <a href="contact.html" class="btn btn-outline">Log In</a>
+        <a href="contact.html" class="btn btn-primary">Sign Up</a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 40px;">
+      <h1>Get in Touch</h1>
+      <p>Have questions? We're here to help you scale your business.</p>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="contact-container glass-card">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <section style="text-align: center; color: var(--text-secondary); padding-bottom: 100px;">
+      <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <div>
+          <h4>Email Us</h4>
+          <p style="margin-top: 8px;">support@vantrix.com</p>
+        </div>
+        <div>
+          <h4>Call Us</h4>
+          <p style="margin-top: 8px;">+1 (555) 000-0000</p>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <p style="margin-top: 8px;">123 Tech Lane, SF, CA</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Message sent successfully!</div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <div class="brand-logo"></div>
+          Vantrix
+        </a>
+        <p>Building the future of e-commerce.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="product.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 60px; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+      &copy; 2024 Vantrix Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
